@@ -10,8 +10,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     defaults:
-      uses:
-        working-directory: ./my-app-name
 
     strategy:
       matrix:
@@ -27,6 +25,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: "npm"
+        working-directory: ./my-app-name
 
       - name: Install dependencies
         working-directory: ./my-app-name
